@@ -45,4 +45,4 @@ RUN mkdir -p language && mkdir -p styles \
     && chown -R www-data:www-data styles
 
 EXPOSE 80
-CMD ["start.sh"]
+#CMD ["start.sh"]

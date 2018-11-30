@@ -1,2 +1,2 @@
 all:
-	docker build -t myphpbb .
+	docker build -t my_phpbb:1 .
