@@ -31,6 +31,8 @@ ENV LANG_DE_PACK_FILE german_casual_honorifics_3_2_2.zip
 ENV LANG_DE_PACK_DIR german_casual_honorifics_3_2_2
 
 WORKDIR /var/www/html
+RUN mkdir -p forum
+WORKDIR /var/www/html/forum
 
 RUN curl -fSL ${LANG_DE_PACK_URL} -o ${LANG_DE_PACK_FILE}
 RUN echo ${LANG_DE_PACK_MD5} ${LANG_DE_PACK_FILE} | md5sum -w -c -
