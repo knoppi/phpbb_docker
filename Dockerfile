@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y curl unzip bzip2 libpq-dev libpng-dev l
         && docker-php-ext-install gd mysqli ldap
 
 WORKDIR /var/www/html
+RUN mkdir -p forum
+WORKDIR /var/www/html/forum
 
 ENV PHPBB_VERSION 3.2.2
 ENV PHPBB_URL https://www.phpbb.com/files/release/phpBB-${PHPBB_VERSION}.tar.bz2
@@ -30,8 +32,6 @@ ENV LANG_DE_PACK_MD5 5075ab89babe1d51a3c3c69b8affcbc5
 ENV LANG_DE_PACK_FILE german_casual_honorifics_3_2_2.zip
 ENV LANG_DE_PACK_DIR german_casual_honorifics_3_2_2
 
-WORKDIR /var/www/html
-RUN mkdir -p forum
 WORKDIR /var/www/html/forum
 
 RUN curl -fSL ${LANG_DE_PACK_URL} -o ${LANG_DE_PACK_FILE}
